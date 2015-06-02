@@ -166,6 +166,9 @@ Monocle.Formatting = function (reader, optStyles, optScale) {
     var styleTag = doc.createElement('style');
     styleTag.type = 'text/css';
     styleTag.id = "monStylesheet"+sheetIndex;
+    if(styleRules.indexOf("http") === 0){
+      styleTag.href = styleRules;
+    }
     if (styleTag.styleSheet) {
       styleTag.styleSheet.cssText = styleRules;
     } else {
